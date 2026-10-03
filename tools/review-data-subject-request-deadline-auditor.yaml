@@ -1,0 +1,64 @@
+{
+  "name": "review-data-subject-request-deadline-auditor",
+  "description": "Run Data Subject Request Deadline Auditor",
+  "version": "0.1.0",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "payload": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "request id"
+          },
+          "received_date": {
+            "type": "string",
+            "description": "received date"
+          },
+          "deadline_policy": {
+            "type": "string",
+            "description": "deadline policy"
+          },
+          "identity_check": {
+            "type": "string",
+            "description": "identity check"
+          },
+          "completion_evidence": {
+            "type": "string",
+            "description": "completion evidence"
+          }
+        },
+        "required": [
+          "request_id",
+          "received_date",
+          "deadline_policy",
+          "identity_check",
+          "completion_evidence"
+        ]
+      }
+    },
+    "required": [
+      "payload"
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "score": {
+        "type": "object"
+      },
+      "findings": {
+        "type": "array"
+      }
+    }
+  },
+  "implementation": {
+    "type": "script",
+    "path": "review-data-subject-request-deadline-auditor.py",
+    "runtime": "python3"
+  }
+}

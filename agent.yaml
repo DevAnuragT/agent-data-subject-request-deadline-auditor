@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: data-subject-request-deadline-auditor
+version: 0.1.0
+description: Review data rights requests for due dates, identity-check state, and completion evidence.
+skills:
+  - data-subject-request-deadline-auditor-skill
+tools:
+  - review-data-subject-request-deadline-auditor
+tags:
+  - privacy
+  - evidence-driven
